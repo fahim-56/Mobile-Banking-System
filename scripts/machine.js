@@ -4,12 +4,16 @@ function visual(id) {
     const cashOut = document.getElementById("cashOutId");
     const transfer = document.getElementById("transferId");
     const history = document.getElementById("transactionID");
+    const getBonus = document.getElementById("getBonusId");
     const pageTitle = document.getElementById("pageTitle");
+
 
     addMoney.style.display = "none";
     cashOut.style.display = "none";
     transfer.style.display = "none";
     history.style.display = "none";
+    getBonus.style.display = "none";
+
 
  
     if (id === "addMoneyId") {
@@ -27,5 +31,9 @@ function visual(id) {
     else if (id === "transactionID") {
         document.getElementById("transactionID").style.display = "block";
         pageTitle.innerText = "Payoo || Transaction History";
+    }
+    else if (id === "getBonusId") {
+        document.getElementById("getBonusId").style.display = "block";
+        pageTitle.innerText = "Payoo || Get Bonus";
     }
 }

@@ -61,7 +61,7 @@
                 <img src="./assets/opt-3.png" alt="">
                 <p>Transfer Money</p>
             </button>
-            <button class="btn flex-col h-full py-4" id="getBonus">
+            <button onclick="visual('getBonusId')" class="btn flex-col h-full py-4" id="getBonus">
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
@@ -188,8 +188,29 @@
             Transaction History
         </h1>
         <div id="history-container">
-            
+
         </div>
+    </div>
+
+    <div id="getBonusId" class="p-3">
+        <h1 class="font-bold text-2xl p-5">
+            Get-Bonus
+        </h1>
+        <form class="space-y-6 bg-white w-11/12 mx-auto p-3 rounded-2xl mb-40">
+
+            <div>
+                <label class="block text-lg font-medium text-gray-500">Enter Bonus Coupon</label>
+                <input type="text" placeholder="Enter bonus coupon code" id="bonusCoupon" name="bonusCoupon" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+
+            <div>
+                <button type="submit" id="getBonusBtn"
+                    class="w-11/12 flex justify-center py-4 px-4 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-indigo-800 hover:bg-indigo-900 focus:ring-indigo-500">
+                    Get-Bonus
+                </button>
+            </div>
+        </form>
     </div>
 
 
@@ -198,8 +219,7 @@
     <script src="./scripts/addMoney.js"></script>
     <script src="./scripts/cashout.js"></script>
     <script src="./scripts/transfer.js"></script>
-
-    <!-- <script src="./scripts/bonus.js"></script> -->
+    <script src="./scripts/getBonus.js"></script>
     <!-- <script src="./scripts/bill.js"></script> -->
 </body>
 

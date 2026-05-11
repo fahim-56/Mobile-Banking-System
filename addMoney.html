@@ -31,7 +31,7 @@
                 <div class="left flex items-center">
                     <img src="./assets/logo.png" alt="Payoo Logo" class="h-10 w-auto mr-2">
                     <div>
-                        <p class="text-xl font-bold text-gray-800">$45000</p>
+                        <p class="text-xl font-bold text-gray-800">$ <span id="balance">45000</span></p>
                         <p class=" text-gray-500/60">Available Balance</p>
                     </div>
 
@@ -81,8 +81,10 @@
         <form class="space-y-6 bg-white w-11/12 mx-auto p-3 rounded-2xl mb-40">
             <div>
                 <label for="amount" class="block text-lg font-medium text-gray-500">Select a Bank</label>
-                <select class="select appearance-none mt-1 w-11/12 px-4 border  border-gray-300 rounded-full text-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100 h-13" id="bankName" name="bankName" required>
-                    <option disabled selected >Select Bank</option>
+                <select
+                    class="select appearance-none mt-1 w-11/12 px-4 border  border-gray-300 rounded-full text-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100 h-13"
+                    id="bankName" name="bankName" required>
+                    <option disabled selected>Select a Bank</option>
                     <option>IBBL</option>
                     <option>JBL</option>
                     <option>DBBL</option>
@@ -90,8 +92,8 @@
             </div>
             <div>
                 <label for="phone" class="block text-lg font-medium text-gray-500">Bank Account Number</label>
-                <input type="number" placeholder="Enter bank account number" id="bankAccount" name="bankAccount"
-                    required
+                <input type="tel" placeholder="Enter 13 digit bank account number" maxlength="13" minlength="13"
+                    id="bankAccount" name="bankAccount" required
                     class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
             </div>
             <div>
@@ -115,6 +117,7 @@
         </form>
     </div>
 
+    <script src="./scripts/addMoney.js"></script>
     <script src="./scripts/machine.js"></script>
     <script src="./scripts/home.js"></script>
 </body>

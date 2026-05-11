@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payoo || Home</title>
+    <title id="pageTitle">Payoo || Home</title>
     <link href="assets/logo.png" rel="icon" type="image/x-icon">
 
     <!-- daysiUI and Tailwind CSS -->
@@ -29,9 +29,11 @@
         <nav class="border-b border-gray-400 py-4">
             <div class="flex items-center justify-around">
                 <div class="left flex items-center">
-                    <img src="./assets/logo.png" alt="Payoo Logo" class="h-10 w-auto mr-2">
+                    <a href="./home.html">
+                        <img src="./assets/logo.png" alt="Payoo Logo" class="h-10 w-auto mr-2">
+                    </a>
                     <div>
-                        <p class="text-xl font-bold text-gray-800">$45000</p>
+                        <p class="text-xl font-bold text-gray-800">$ <span id="balance">45000</span></p>
                         <p class=" text-gray-500/60">Available Balance</p>
                     </div>
 
@@ -47,15 +49,15 @@
             <p>Enjoy easy and convenient financial services with lowest Cash out charge...</p>
         </section>
         <section class="grid grid-cols-3 p-6 gap-4">
-            <button class="btn flex-col h-full py-4" id="addMoney">
+            <button onclick="visual('addMoneyId')" class="btn flex-col h-full py-4" id="addMoney">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </button>
-            <button class="btn flex-col h-full py-4" id="cashout">
+            <button onclick="visual('cashOutId')" class="btn flex-col h-full py-4" id="cashout">
                 <img src="./assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </button>
-            <button class="btn flex-col h-full py-4" id="transferMoney">
+            <button onclick="visual('transferId')" class="btn flex-col h-full py-4" id="transferMoney">
                 <img src="./assets/opt-3.png" alt="">
                 <p>Transfer Money</p>
             </button>
@@ -67,15 +69,138 @@
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
-            <button class="btn flex-col h-full py-4" id="transaction">
+            <button onclick="visual('transactionID')" class="btn flex-col h-full py-4" id="transaction">
                 <img src="./assets/opt-6.png" alt="">
                 <p>Transaction</p>
             </button>
         </section>
     </div>
 
+    <div id="addMoneyId" class="p-3">
+        <h1 class="font-bold text-2xl p-5">
+            Add Money
+        </h1>
+        <form class="space-y-6 bg-white w-11/12 mx-auto p-3 rounded-2xl mb-40">
+            <div>
+                <label for="amount" class="block text-lg font-medium text-gray-500">Select a Bank</label>
+                <select
+                    class="select appearance-none mt-1 w-11/12 px-4 border  border-gray-300 rounded-full text-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100 h-13"
+                    id="bankName" name="bankName" required>
+                    <option disabled selected>Select a Bank</option>
+                    <option>IBBL</option>
+                    <option>JBL</option>
+                    <option>DBBL</option>
+                </select>
+            </div>
+            <div>
+                <label for="phone" class="block text-lg font-medium text-gray-500">Bank Account Number</label>
+                <input type="tel" placeholder="Enter 13 digit bank account number" maxlength="13" minlength="13"
+                    id="bankAccount" name="bankAccount" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label class="block text-lg font-medium text-gray-500">Amount to add</label>
+                <input type="number" placeholder="Enter amount to add" id="amount" name="amount" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label class="block text-lg font-medium text-gray-500">PIN Number</label>
+                <input type="password" placeholder="Enter your 4-digit PIN" maxlength="4" minlength="4" id="password"
+                    name="password" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+
+            <div>
+                <button type="submit" id="add-money-btn"
+                    class="w-11/12 flex justify-center py-4 px-4 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-indigo-800 hover:bg-indigo-900 focus:ring-indigo-500">
+                    Add Money
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="cashOutId" class="p-3">
+        <h1 class="font-bold text-2xl p-5">
+            Cashout
+        </h1>
+        <form class="space-y-6 bg-white w-11/12 mx-auto p-3 rounded-2xl mb-40">
+            <div>
+                <label for="phone" class="block text-lg font-medium text-gray-500">Agent Number</label>
+                <input type="tel" placeholder="Enter 11 digit number" maxlength="11" minlength="11" id="phone"
+                    name="phone" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label for="amount" class="block text-lg font-medium text-gray-500">Amount</label>
+                <input type="number" placeholder="Enter amount to withdraw" id="cashoutAmount" name="amount" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label for="password" class="block text-lg font-medium text-gray-500">PIN Number</label>
+                <input type="password" placeholder="Enter your 4-digit PIN" maxlength="4" minlength="4"
+                    id="cashoutPassword" name="password" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+
+            <div>
+                <button type="submit" id="withdraw-btn"
+                    class="w-11/12 flex justify-center py-4 px-4 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-indigo-800 hover:bg-indigo-900 focus:ring-indigo-500">
+                    Withdraw Money
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="transferId" class="p-3">
+        <h1 class="font-bold text-2xl p-5">
+            Transfer Money
+        </h1>
+        <form class="space-y-6 bg-white w-11/12 mx-auto p-3 rounded-2xl mb-40">
+            <div>
+                <label for="phone" class="block text-lg font-medium text-gray-500">Transfer Account Number</label>
+                <input type="tel" placeholder="Enter 11 digit number" maxlength="11" minlength="11" id="transferPhone"
+                    name="phone" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label for="amount" class="block text-lg font-medium text-gray-500">Amount</label>
+                <input type="number" placeholder="Enter amount to transfer" id="transferAmount" name="amount" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label for="password" class="block text-lg font-medium text-gray-500">PIN Number</label>
+                <input type="password" placeholder="Enter your 4-digit PIN" maxlength="4" minlength="4"
+                    id="transferPassword" name="password" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+
+            <div>
+                <button type="submit" id="transfer-btn"
+                    class="w-11/12 flex justify-center py-4 px-4 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-indigo-800 hover:bg-indigo-900 focus:ring-indigo-500">
+                    Transfer Money
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="transactionID" class="p-3">
+        <h1 class="font-bold text-2xl p-5">
+            Transaction History
+        </h1>
+        <div id="history-container">
+            
+        </div>
+    </div>
+
+
     <script src="./scripts/machine.js"></script>
     <script src="./scripts/home.js"></script>
+    <script src="./scripts/addMoney.js"></script>
+    <script src="./scripts/cashout.js"></script>
+    <script src="./scripts/transfer.js"></script>
+
+    <!-- <script src="./scripts/bonus.js"></script> -->
+    <!-- <script src="./scripts/bill.js"></script> -->
 </body>
 
 </html>

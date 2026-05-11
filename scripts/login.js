@@ -1,14 +1,12 @@
-// console.log("Login page script loaded");
-
 document.getElementById("login-btn").addEventListener("click", function (event) {
     event.preventDefault();
     const phoneNumber = document.getElementById("phone");
-    console.log("Phone Number entered:", phoneNumber.value);
+    // console.log("Phone Number entered:", phoneNumber.value);
     const pin = document.getElementById("password");
-    console.log("PIN entered:", pin.value);
-    if (phoneNumber.value == "01712345678") {
+    // console.log("PIN entered:", pin.value);
+    if (phoneNumber.value == "01991027456") {
         if (pin.value == "1234") {
-            console.log("Login successful");
+            // console.log("Login successful");
             alert("Login successful! Redirecting to home page...");
             window.location.assign("../home.html");
             // window.location.replace("home.html");

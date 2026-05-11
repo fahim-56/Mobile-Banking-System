@@ -1,13 +1,11 @@
-console.log("Adding money to all accounts...");
-
-document.getElementById("add-money-btn").addEventListener("click", function(event) {
+document.getElementById("add-money-btn").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission  
     const bank = document.getElementById("bankName").value;
     const accountNumber = document.getElementById("bankAccount").value;
     const amount = parseFloat(document.getElementById("amount").value);
     const pin = document.getElementById("password").value;
 
-    if(!bank || !accountNumber || isNaN(amount) || !pin) {
+    if (!bank || !accountNumber || isNaN(amount) || !pin) {
         alert("Please fill in all fields correctly.");
         return;
     }
@@ -28,7 +26,19 @@ document.getElementById("add-money-btn").addEventListener("click", function(even
 
         alert(`Successfully added ${amount.toFixed(2)} Taka to your account! 
         From: ${bank} Account: ${accountNumber} 
-        at ${new Date().toLocaleString()}`);
+        at ${new Date().toLocaleString()}
+        Your new balance is ${document.getElementById("balance").innerText} Taka.`);
+
+        const allTransactions = document.getElementById("history-container");
+        if(allTransactions.children[0].innerText === "No transactions yet.") {
+                allTransactions.innerHTML = ""; // Clear the "No transactions yet" message
+            }
+        const newHistory = document.createElement("div");
+        newHistory.innerHTML = `<div class="bg-white w-11/12 mx-auto p-3 rounded-2xl mb-4">
+        Add Money: ${amount.toFixed(2)} Taka
+        From: ${bank} Account: ${accountNumber} 
+        at ${new Date().toLocaleString()} </div>`;
+        allTransactions.appendChild(newHistory);
     }
     else {
         alert("Invalid PIN. Please try again.");

@@ -1,28 +1,10 @@
-// document.getElementById("payooLogo").addEventListener("click", function (event) {
-//     window.location.assign("../home.html");
-// });
+document.getElementById("addMoneyId").style.display = "none";
+document.getElementById("cashOutId").style.display = "none";
+document.getElementById("transferId").style.display = "none";
 
-document.getElementById("addMoney").addEventListener("click", function (event) {
-    window.location.assign("../addMoney.html");
-});
-
-document.getElementById("cashout").addEventListener("click", function (event) {
-    window.location.assign("../cashout.html");
-});
-
-document.getElementById("transferMoney").addEventListener("click", function (event) {
-    window.location.assign("../transferMoney.html");
-});
-
-document.getElementById("getBonus").addEventListener("click", function (event) {
-    window.location.assign("../getBonus.html");
-});
-
-document.getElementById("payBill").addEventListener("click", function (event) {
-    window.location.assign("../payBill.html");
-});
-
-document.getElementById("transaction").addEventListener("click", function (event) {
-    window.location.assign("../transaction.html");
-});
-
+const allTransactions = document.getElementById("history-container");
+if (allTransactions.children.length === 0) {
+    allTransactions.innerHTML = `<div class="bg-white w-11/12 mx-auto p-3 rounded-2xl mb-40">
+                <p class="text-gray-500">No transactions yet.</p>
+            </div>`;
+}

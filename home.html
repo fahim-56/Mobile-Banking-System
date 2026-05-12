@@ -65,7 +65,7 @@
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
-            <button class="btn flex-col h-full py-4" id="payBill">
+            <button onclick="visual('payBillId')" class="btn flex-col h-full py-4" id="payBill">
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
@@ -204,6 +204,52 @@
         </form>
     </div>
 
+    <div id="payBillId" class="p-3">
+        <h1 class="font-bold text-2xl p-5">
+            Pay Bill
+        </h1>
+        <form class="space-y-6 bg-white w-11/12 mx-auto p-3 rounded-2xl mb-40">
+            <div>
+                <label for="amount" class="block text-lg font-medium text-gray-500">Select Bill Type To Pay</label>
+                <select
+                    class="select appearance-none mt-1 w-11/12 px-4 border  border-gray-300 rounded-full text-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100 h-13"
+                    id="payType" name="payType" required>
+                    <option disabled selected>Select Bill Type</option>
+                    <option>Electricity</option>
+                    <option>Gas</option>
+                    <option>Water</option>
+                    <option>Internet</option>
+                    <option>Television</option>
+                    <option>Telephone</option>
+                </select>
+            </div>
+            <div>
+                <label for="phone" class="block text-lg font-medium text-gray-500">Bill Account Number</label>
+                <input type="tel" placeholder="Enter bill account number(8-13 digits)" maxlength="13" minlength="8" id="billAccount"
+                    name="billAccount" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label class="block text-lg font-medium text-gray-500">Amount to pay</label>
+                <input type="number" placeholder="Enter amount to pay" id="billAmount" name="billAmount" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+            <div>
+                <label class="block text-lg font-medium text-gray-500">PIN Number</label>
+                <input type="password" placeholder="Enter your 4-digit PIN" maxlength="4" minlength="4" id="payBillPassword"
+                    name="payBillPassword" required
+                    class="mt-1 w-11/12 px-4 py-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black bg-slate-100">
+            </div>
+
+            <div>
+                <button type="submit" id="payBillBtn"
+                    class="w-11/12 flex justify-center py-4 px-4 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-indigo-800 hover:bg-indigo-900 focus:ring-indigo-500">
+                    Pay Bill
+                </button>
+            </div>
+        </form>
+    </div>
+
     <div id="transactionID" class="p-3">
         <h1 id="recentTransactionsTitle" class="font-bold text-2xl p-5">Recent Transactions</h1>
         <h1 id="transactionHistoryTitle" class="font-bold text-2xl p-5">
@@ -220,7 +266,7 @@
     <script src="./scripts/cashout.js"></script>
     <script src="./scripts/transfer.js"></script>
     <script src="./scripts/getBonus.js"></script>
-    <!-- <script src="./scripts/bill.js"></script> -->
+    <script src="./scripts/payBill.js"></script>
 </body>
 
 </html>

@@ -5,6 +5,7 @@ function visual(id) {
     const transfer = document.getElementById("transferId");
     const history = document.getElementById("transactionID");
     const getBonus = document.getElementById("getBonusId");
+    const payBill = document.getElementById("payBillId");
     const transactionHistoryTitle = document.getElementById("transactionHistoryTitle");
     const recentTransactionsTitle = document.getElementById("recentTransactionsTitle");
     const pageTitle = document.getElementById("pageTitle");
@@ -15,6 +16,7 @@ function visual(id) {
     transfer.style.display = "none";
     history.style.display = "none";
     getBonus.style.display = "none";
+    payBill.style.display = "none";
     transactionHistoryTitle.style.display = "none";
     recentTransactionsTitle.style.display = "none";
 
@@ -41,5 +43,9 @@ function visual(id) {
     else if (id === "getBonusId") {
         document.getElementById("getBonusId").style.display = "block";
         pageTitle.innerText = "Payoo || Get Bonus";
+    }
+    else if (id === "payBillId") {
+        payBill.style.display = "block";
+        pageTitle.innerText = "Payoo || Pay Bill";
     }
 }

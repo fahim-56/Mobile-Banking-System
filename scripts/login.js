@@ -8,7 +8,7 @@ document.getElementById("login-btn").addEventListener("click", function (event) 
         if (pin.value == "1234") {
             // console.log("Login successful");
             alert("Login successful! Redirecting to home page...");
-            window.location.assign("../home.html");
+            window.location.assign("./home.html");
             // window.location.replace("home.html");
 
         } else {

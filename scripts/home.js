@@ -2,6 +2,7 @@ document.getElementById("addMoneyId").style.display = "none";
 document.getElementById("cashOutId").style.display = "none";
 document.getElementById("transferId").style.display = "none";
 document.getElementById("getBonusId").style.display = "none";
+document.getElementById("transactionHistoryTitle").style.display = "none";
 
 
 const allTransactions = document.getElementById("history-container");

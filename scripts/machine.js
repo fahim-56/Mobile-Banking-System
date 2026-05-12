@@ -5,6 +5,8 @@ function visual(id) {
     const transfer = document.getElementById("transferId");
     const history = document.getElementById("transactionID");
     const getBonus = document.getElementById("getBonusId");
+    const transactionHistoryTitle = document.getElementById("transactionHistoryTitle");
+    const recentTransactionsTitle = document.getElementById("recentTransactionsTitle");
     const pageTitle = document.getElementById("pageTitle");
 
 
@@ -13,6 +15,8 @@ function visual(id) {
     transfer.style.display = "none";
     history.style.display = "none";
     getBonus.style.display = "none";
+    transactionHistoryTitle.style.display = "none";
+    recentTransactionsTitle.style.display = "none";
 
 
  
@@ -29,6 +33,8 @@ function visual(id) {
         pageTitle.innerText = "Payoo || Transfer Money";
     }
     else if (id === "transactionID") {
+        
+        transactionHistoryTitle.style.display = "block";
         document.getElementById("transactionID").style.display = "block";
         pageTitle.innerText = "Payoo || Transaction History";
     }

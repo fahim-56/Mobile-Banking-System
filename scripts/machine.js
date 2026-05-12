@@ -21,7 +21,7 @@ function visual(id) {
     recentTransactionsTitle.style.display = "none";
 
 
- 
+
     if (id === "addMoneyId") {
         addMoney.style.display = "block";
         pageTitle.innerText = "Payoo || Add Money";
@@ -35,7 +35,7 @@ function visual(id) {
         pageTitle.innerText = "Payoo || Transfer Money";
     }
     else if (id === "transactionID") {
-        
+
         transactionHistoryTitle.style.display = "block";
         document.getElementById("transactionID").style.display = "block";
         pageTitle.innerText = "Payoo || Transaction History";
@@ -47,5 +47,10 @@ function visual(id) {
     else if (id === "payBillId") {
         payBill.style.display = "block";
         pageTitle.innerText = "Payoo || Pay Bill";
+    }
+    else if (id === "recentTransactionsTitle") {
+        recentTransactionsTitle.style.display = "block";
+        document.getElementById("transactionID").style.display = "block";
+        pageTitle.innerText = "Payoo || Home";
     }
 }

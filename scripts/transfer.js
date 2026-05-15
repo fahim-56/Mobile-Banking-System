@@ -13,6 +13,10 @@ document.getElementById("transfer-btn").addEventListener("click", function (even
         alert("Please enter correct agent number");
         return;
     }
+     else if(phone === "01991027456") {
+        alert("You can not transfer to your own number");
+        return;
+    }
     else if (password !== "1234") {
         alert("Incorrect PIN. Please try again.");
         return;
@@ -34,10 +38,11 @@ document.getElementById("transfer-btn").addEventListener("click", function (even
             Your new balance is $${(Number(balance) - Number(transferAmount)).toFixed(2)}`);
             // console.log("balance after transfer:", document.getElementById("balance").innerText);
             const allTransactions = document.getElementById("history-container");
-            console.log(allTransactions.children[0].textContent.trim() === "No transactions yet.");
+            // console.log(allTransactions.children[0].textContent.trim() === "No transactions yet.");
+
             if(allTransactions.children.length === 1 && allTransactions.children[0].textContent.trim() === "No transactions yet.") {
                 allTransactions.innerHTML = ""; // Clear the "No transactions yet" message
-                console.log("Cleared 'No transactions yet' message");
+                // console.log("Cleared 'No transactions yet' message");
             }
             const newHistory = document.createElement("div");
             newHistory.innerHTML = `<div class="bg-white w-11/12 mx-auto p-3 rounded-2xl mb-4">

@@ -1,16 +1,19 @@
-
 document.getElementById("withdraw-btn").addEventListener("click", function (event) {
     event.preventDefault();
-    // console.log("Withdraw button clicked");
     const cashoutAmount = document.getElementById("cashoutAmount").value;
     const balance = document.getElementById("balance").innerText;
     const phone = document.getElementById("phone").value;
     const password = document.getElementById("cashoutPassword").value;
-    // console.log("Amount entered:", cashoutAmount);
-    // console.log("Phone entered:", phone);
-    // console.log("Password entered:", password);
     if (phone.length !== 11) {
         alert("Please enter correct agent number");
+        return;
+    }
+    else if (phone[0] !== '0' || phone[1] !== '1' ) {
+        alert("Please enter correct agent number");
+        return;
+    }
+    else if(phone === "01991027456") {
+        alert("You can not withdraw to your own number");
         return;
     }
     else if (password !== "1234") {

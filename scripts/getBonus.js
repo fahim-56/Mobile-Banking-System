@@ -8,7 +8,7 @@ document.getElementById("getBonusBtn").addEventListener("click", function (event
     }
     else if (bonusCode === "PAYOO100") {
         const bonusAmount = 100;
-        document.getElementById("balance").innerText = ((document.getElementById("balance").innerText) + bonusAmount);
+        document.getElementById("balance").innerText = (Number(document.getElementById("balance").innerText) + Number(bonusAmount));
         alert(`Congratulations! You've received a bonus of ${bonusAmount} Taka. Your new balance is $${document.getElementById("balance").innerText}.`);
         const allTransactions = document.getElementById("history-container");
         if (allTransactions.children[0].textContent.trim() === "No transactions yet.") {

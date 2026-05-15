@@ -30,9 +30,12 @@ document.getElementById("add-money-btn").addEventListener("click", function (eve
         Your new balance is ${document.getElementById("balance").innerText} Taka.`);
 
         const allTransactions = document.getElementById("history-container");
-        if(allTransactions.children[0].innerText === "No transactions yet.") {
-                allTransactions.innerHTML = ""; // Clear the "No transactions yet" message
-            }
+        console.log(allTransactions.children[0].textContent.trim() === "No transactions yet.");
+        if (allTransactions.children[0].textContent.trim() === "No transactions yet.") {
+            allTransactions.innerHTML = ""; // Clear the "No transactions yet" message
+        }
+
+
         const newHistory = document.createElement("div");
         newHistory.innerHTML = `<div class="bg-white w-11/12 mx-auto p-3 rounded-2xl mb-4">
         Add Money: ${amount.toFixed(2)} Taka

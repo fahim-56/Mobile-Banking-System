@@ -24,33 +24,33 @@ function visual(id) {
 
     if (id === "addMoneyId") {
         addMoney.style.display = "block";
-        pageTitle.innerText = "Payoo || Add Money";
+        pageTitle.innerText = "PayCash || Add Money";
     }
     else if (id === "cashOutId") {
         cashOut.style.display = "block";
-        pageTitle.innerText = "Payoo || Cash Out";
+        pageTitle.innerText = "PayCash || Cash Out";
     }
     else if (id === "transferId") {
         document.getElementById("transferId").style.display = "block";
-        pageTitle.innerText = "Payoo || Transfer Money";
+        pageTitle.innerText = "PayCash || Transfer Money";
     }
     else if (id === "transactionID") {
 
         transactionHistoryTitle.style.display = "block";
         document.getElementById("transactionID").style.display = "block";
-        pageTitle.innerText = "Payoo || Transaction History";
+        pageTitle.innerText = "PayCash || Transaction History";
     }
     else if (id === "getBonusId") {
         document.getElementById("getBonusId").style.display = "block";
-        pageTitle.innerText = "Payoo || Get Bonus";
+        pageTitle.innerText = "PayCash || Get Bonus";
     }
     else if (id === "payBillId") {
         payBill.style.display = "block";
-        pageTitle.innerText = "Payoo || Pay Bill";
+        pageTitle.innerText = "PayCash || Pay Bill";
     }
     else if (id === "recentTransactionsTitle") {
         recentTransactionsTitle.style.display = "block";
         document.getElementById("transactionID").style.display = "block";
-        pageTitle.innerText = "Payoo || Home";
+        pageTitle.innerText = "PayCash || Home";
     }
 }

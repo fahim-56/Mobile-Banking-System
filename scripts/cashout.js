@@ -8,11 +8,11 @@ document.getElementById("withdraw-btn").addEventListener("click", function (even
         alert("Please enter correct agent number");
         return;
     }
-    else if (phone[0] !== '0' || phone[1] !== '1' ) {
+    else if (phone[0] !== '0' || phone[1] !== '1') {
         alert("Please enter correct agent number");
         return;
     }
-    else if(phone === "01991027456") {
+    else if (phone === "01991027456") {
         alert("You can not withdraw to your own number");
         return;
     }
@@ -37,7 +37,7 @@ document.getElementById("withdraw-btn").addEventListener("click", function (even
             Your new balance is $${(Number(balance) - Number(cashoutAmount)).toFixed(2)}`);
             // console.log("balance after withdrawal:", document.getElementById("balance").innerText);
             const allTransactions = document.getElementById("history-container");
-            if(allTransactions.children.length === 1 && allTransactions.children[0].innerText === "No transactions yet.") {
+            if (allTransactions.children[0].textContent.trim() === "No transactions yet.") {
                 allTransactions.innerHTML = ""; // Clear the "No transactions yet" message
             }
             const newHistory = document.createElement("div");
